@@ -1,27 +1,28 @@
 package objektwerks
 
-import org.scalajs.dom
-import org.scalajs.dom.document
-import org.scalajs.dom.HTMLDocument
+import indigo.*
 
-object App:
-  def main(args: Array[String]): Unit =
-    document.addEventListener("DOMContentLoaded", { (_: dom.Event) =>
-      build(document)
-    })
-    println("*** Scalajs console app!")
+import scala.scalajs.js.annotation.JSExportTopLevel
 
-  def build(document: HTMLDocument): Unit =
-    val paragraph = document.createElement("p")
-    paragraph.id = "pid"
-    paragraph.textContent = "Scalajs web app!"
-    document.body.appendChild(paragraph)
+@JSExportTopLevel("IndigoGame")
+object App extends IndigoSandbox[Unit, Unit]:
+  val config: GameConfig = GameConfig.default
 
-    val button = document.createElement("button")
-    button.id = "bid"
-    button.textContent = "Click me!"
-    button.addEventListener("click", { (_: dom.MouseEvent) =>
-      println("*** Button clicked!")
-    })
-    document.body.appendChild(button)
-    ()
+  val animations: Set[Animation] = Set()
+
+  val assets: Set[AssetType] = Set()
+
+  val fonts: Set[FontInfo] = Set()
+
+  val shaders: Set[Shader] = Set()
+
+  def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] = Outcome(Startup.Success(()))
+
+  def initialModel(startupData: Unit): Outcome[Unit] = Outcome(())
+
+  def updateModel(context: FrameContext[Unit], model: Unit): GlobalEvent => Outcome[Unit] = _ => Outcome(())
+
+  def present(context: FrameContext[Unit], model: Unit): Outcome[SceneUpdateFragment] =
+    Outcome(
+      SceneUpdateFragment.empty
+    )
