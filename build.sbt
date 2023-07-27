@@ -12,9 +12,12 @@ lazy val indigo = (project in file("."))
     gameAssetsDirectory := "assets",
     windowStartWidth := 720,
     windowStartHeight := 480,
-    libraryDependencies ++= Seq(
-      "io.indigoengine" %%% "indigo" % "0.14.0",
-      "io.indigoengine" %%% "indigo-extras" % "0.14.0",
-      "io.indigoengine" %%% "indigo-json-circe" % "0.14.0",
-    )
+    libraryDependencies ++= {
+      val indigoVersion = "0.15.0-RC3"
+      Seq(
+        "io.indigoengine" %%% "indigo" % indigoVersion,
+        "io.indigoengine" %%% "indigo-extras" % indigoVersion,
+        "io.indigoengine" %%% "indigo-json-circe" % indigoVersion,
+      )
+    }
   )
