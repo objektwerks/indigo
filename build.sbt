@@ -2,7 +2,7 @@ lazy val indigo = (project in file("."))
   .enablePlugins(ScalaJSPlugin, SbtIndigo)
   .settings(
     name := "indigo",
-    version := "0.0.1",
+    version := "0.1-SNAPSHOT",
     scalaVersion := "3.3.1-RC4",
     organization := "objektwerks"
   )
