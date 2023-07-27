@@ -8,7 +8,7 @@ lazy val indigo = (project in file("."))
   )
   .settings(
     showCursor := true,
-    title := "Indigo",
+    title := "Game",
     gameAssetsDirectory := "assets",
     windowStartWidth := 720,
     windowStartHeight := 480,
