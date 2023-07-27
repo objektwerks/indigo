@@ -2,6 +2,10 @@ Indigo
 ------
 >Indigo game engine app using Scala 3.
 
+Note
+----
+>The Indigo Game renders a ***blank*** white Electron screen, running on an Apple M1/Ventura.
+
 Install
 -------
 1. brew install npm
