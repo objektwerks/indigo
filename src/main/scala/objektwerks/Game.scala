@@ -28,5 +28,7 @@ object Game extends IndigoSandbox[Unit, Unit]:
 
   def present(context: FrameContext[Unit], model: Unit): Outcome[SceneUpdateFragment] =
     Outcome(
-      SceneUpdateFragment.empty
+      SceneUpdateFragment(
+        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName))
+      )
     )
