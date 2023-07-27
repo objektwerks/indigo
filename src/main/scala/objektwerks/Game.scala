@@ -14,17 +14,17 @@ object Game extends IndigoSandbox[Unit, Model]:
 
   val assetName = AssetName("dots")
 
-  val assets: Set[AssetType] = Set( AssetType.Image( AssetName("dots"), AssetPath("assets/dots.png") ) )
+  val assets: Set[AssetType] = Set(AssetType.Image(assetName, AssetPath("assets/dots.png")))
 
   val fonts: Set[FontInfo] = Set()
 
   val shaders: Set[Shader] = Set()
 
-  def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] = Outcome( Startup.Success(()) )
+  def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] = Outcome(Startup.Success(()))
 
   def initialModel(startupData: Unit): Outcome[Model] =
     Outcome(
-      Model.initial( config.viewport.giveDimensions(magnification).center )
+      Model.initial(config.viewport.giveDimensions(magnification).center)
     )
 
   def updateModel(context: FrameContext[Unit], model: Model): GlobalEvent => Outcome[Model] =
@@ -34,12 +34,7 @@ object Game extends IndigoSandbox[Unit, Model]:
         model.addDot(
           Dot(
             Point.distanceBetween(model.center, point).toInt,
-            Radians(
-              Math.atan2(
-                adjustedPosition.x.toDouble,
-                adjustedPosition.y.toDouble
-              )
-            )
+            Radians(Math.atan2(adjustedPosition.x.toDouble, adjustedPosition.y.toDouble))
           )
         )
       )
@@ -49,8 +44,7 @@ object Game extends IndigoSandbox[Unit, Model]:
   def present(context: FrameContext[Unit], model: Model): Outcome[SceneUpdateFragment] =
     Outcome(
       SceneUpdateFragment(
-        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName)) ::
-          drawDots(model.center, model.dots)
+        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName)) :: drawDots(model.center, model.dots)
       )
     )
 
