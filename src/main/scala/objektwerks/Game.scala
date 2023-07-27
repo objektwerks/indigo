@@ -71,9 +71,8 @@ final case class Model(center: Point, dots: Batch[Dot]):
   def addDot(dot: Dot): Model = this.copy(dots = dot :: dots)
   def update(timeDelta: Seconds): Model = this.copy(dots = dots.map(_.update(timeDelta)))
 
-object Model {
+object Model:
   def initial(center: Point): Model = Model(center, Batch.empty)
-}
 
 final case class Dot(orbitDistance: Int, angle: Radians):
   def update(timeDelta: Seconds): Dot = this.copy(angle = angle + Radians.fromSeconds(timeDelta))
