@@ -1,2 +1,3 @@
-# indigo
-Indigo game engine app using Scala 3.
+Indigo
+------
+>Indigo game engine app using Scala 3.
