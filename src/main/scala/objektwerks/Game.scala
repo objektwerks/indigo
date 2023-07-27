@@ -6,7 +6,7 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("Game")
 object Game extends IndigoSandbox[Unit, Unit]:
-  val config: GameConfig = GameConfig.default
+  val config: indigo.GameConfig = GameConfig.default.withMagnification(magnification = 3)
 
   val animations: Set[Animation] = Set()
 
