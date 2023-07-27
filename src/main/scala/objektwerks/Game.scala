@@ -8,17 +8,17 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 object Game extends IndigoSandbox[Unit, Model]:
   val magnification = 3
 
-  val config: GameConfig = GameConfig.default.withMagnification(magnification)
+  val config = GameConfig.default.withMagnification(magnification)
 
-  val animations: Set[Animation] = Set()
+  val animations = Set.empty[Animation]
 
   val assetName = AssetName("dots")
 
-  val assets: Set[AssetType] = Set(AssetType.Image(assetName, AssetPath("assets/dots.png")))
+  val assets = Set(AssetType.Image(assetName, AssetPath("assets/dots.png")))
 
-  val fonts: Set[FontInfo] = Set()
+  val fonts = Set.empty[FontInfo]
 
-  val shaders: Set[Shader] = Set()
+  val shaders = Set.empty[Shader]
 
   def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] = Outcome(Startup.Success(()))
 
