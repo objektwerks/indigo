@@ -6,7 +6,9 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("Game")
 object Game extends IndigoSandbox[Unit, Unit]:
-  val config: indigo.GameConfig = GameConfig.default.withMagnification(magnification = 3)
+  val magnification = 3
+
+  val config: indigo.GameConfig = GameConfig.default.withMagnification(magnification )
 
   val animations: Set[Animation] = Set()
 
@@ -29,6 +31,10 @@ object Game extends IndigoSandbox[Unit, Unit]:
   def present(context: FrameContext[Unit], model: Unit): Outcome[SceneUpdateFragment] =
     Outcome(
       SceneUpdateFragment(
+        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName)),
         Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName))
+          .withCrop(Rectangle(16, 16, 16, 16))
+          .withRef(8, 8)
+          .moveTo(config.viewport.giveDimensions(magnification).center)
       )
     )
