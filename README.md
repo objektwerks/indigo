@@ -14,3 +14,7 @@ Build
 Run
 ---
 1. sbt compile fastOptJS indigoRun
+
+Reference
+---------
+1. [Hello Indigo Game](https://github.com/PurpleKingdomGames/hello-indigo/tree/master)
