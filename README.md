@@ -6,3 +6,6 @@ Build
 -----
 1. sbt compile fastOptJS indigoBuild
 
+Run
+---
+1. sbt compile fastOptJS indigoRun
