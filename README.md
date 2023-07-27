@@ -4,7 +4,7 @@ Indigo
 
 Note
 ----
->The Indigo Game renders a ***blank*** white Electron screen, running on an Apple M1/Ventura.
+>This Indigo ***Game*** renders a ***blank*** white Electron screen, running on an Apple M1/Ventura.
 
 Install
 -------
