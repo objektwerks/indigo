@@ -7,11 +7,11 @@ lazy val indigo = (project in file("."))
     organization := "objektwerks"
   )
   .settings(
-    showCursor := true,
     title := "Game",
     gameAssetsDirectory := "assets",
     windowStartWidth := 720,
     windowStartHeight := 480,
+    showCursor := true,
     libraryDependencies ++= {
       val indigoVersion = "0.15.0-RC3"
       Seq(
