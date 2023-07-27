@@ -17,4 +17,5 @@ Run
 
 Reference
 ---------
-1. [Hello Indigo Game](https://github.com/PurpleKingdomGames/hello-indigo/tree/master)
+1. [Indigo Game Engine](https://indigoengine.io/)
+2. [Hello Indigo Game](https://github.com/PurpleKingdomGames/hello-indigo/tree/master)
