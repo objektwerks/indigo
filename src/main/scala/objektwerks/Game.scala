@@ -31,15 +31,6 @@ object Game extends IndigoSandbox[Unit, Unit]:
   def present(context: FrameContext[Unit], model: Unit): Outcome[SceneUpdateFragment] =
     Outcome(
       SceneUpdateFragment(
-        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName)),
         Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName))
-          .withCrop(Rectangle(16, 16, 16, 16))
-          .withRef(8, 8)
-          .moveTo(
-            Signal
-              .Orbit(config.viewport.giveDimensions(magnification).center, 30)
-              .map(_.toPoint)
-              .at(context.running)
-          )
       )
     )
