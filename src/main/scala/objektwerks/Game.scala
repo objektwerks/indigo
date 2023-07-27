@@ -20,7 +20,10 @@ object Game extends IndigoSandbox[Unit, Model]:
 
   val shaders = Set.empty[Shader]
 
-  def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] = Outcome(Startup.Success(()))
+  def setup(assetCollection: AssetCollection, dice: Dice): Outcome[Startup[Unit]] =
+    Outcome(
+      Startup.Success(())
+    )
 
   def initialModel(startupData: Unit): Outcome[Model] =
     Outcome(
@@ -44,7 +47,10 @@ object Game extends IndigoSandbox[Unit, Model]:
   def present(context: FrameContext[Unit], model: Model): Outcome[SceneUpdateFragment] =
     Outcome(
       SceneUpdateFragment(
-        Graphic(Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName)) :: drawDots(model.center, model.dots)
+        Graphic(
+          Rectangle(0, 0, 32, 32), 1, Material.Bitmap(assetName))
+          :: drawDots(model.center, model.dots
+        )
       )
     )
 
@@ -62,11 +68,11 @@ object Game extends IndigoSandbox[Unit, Model]:
     }
 
 final case class Model(center: Point, dots: Batch[Dot]):
-  def addDot(dot: Dot): Model = this.copy(dots = dot :: dots)
-  def update(timeDelta: Seconds): Model = this.copy(dots = dots.map(_.update(timeDelta)))
+  def addDot(dot: Dot): Model = copy(dots = dot :: dots)
+  def update(timeDelta: Seconds): Model = copy(dots = dots.map(_.update(timeDelta)))
 
 object Model:
   def initial(center: Point): Model = Model(center, Batch.empty)
 
 final case class Dot(orbitDistance: Int, angle: Radians):
-  def update(timeDelta: Seconds): Dot = this.copy(angle = angle + Radians.fromSeconds(timeDelta))
+  def update(timeDelta: Seconds): Dot = copy(angle = angle + Radians.fromSeconds(timeDelta))
