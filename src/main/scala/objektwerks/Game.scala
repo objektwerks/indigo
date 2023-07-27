@@ -10,7 +10,11 @@ object Game extends IndigoSandbox[Unit, Unit]:
 
   val animations: Set[Animation] = Set()
 
-  val assets: Set[AssetType] = Set()
+  val assetName = AssetName("dots")
+
+  val assets: Set[indigo.AssetType] = Set(
+    AssetType.Image(assetName, AssetPath("assets/dots.png"))
+  )
 
   val fonts: Set[FontInfo] = Set()
 
