@@ -8,7 +8,7 @@ import scala.scalajs.js.annotation.JSExportTopLevel
 object Game extends IndigoSandbox[Unit, Unit]:
   val magnification = 3
 
-  val config: indigo.GameConfig = GameConfig.default.withMagnification(magnification)
+  val config: GameConfig = GameConfig.default.withMagnification(magnification)
 
   val animations: Set[Animation] = Set()
 
