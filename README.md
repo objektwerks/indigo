@@ -8,7 +8,7 @@ Note
 
 Install
 -------
-1. brew install npm
+1. brew install node
 2. npm install -g electron
 
 Build
