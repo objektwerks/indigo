@@ -21,3 +21,6 @@ lazy val indigo = (project in file("."))
       )
     }
   )
+scalacOptions ++= Seq(
+  "-Wunused:all"
+)
