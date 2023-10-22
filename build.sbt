@@ -13,7 +13,7 @@ lazy val indigo = (project in file("."))
     windowStartHeight := 480,
     showCursor := true,
     libraryDependencies ++= {
-      val indigoVersion = "0.15.0-RC3"
+      val indigoVersion = "0.15.1"
       Seq(
         "io.indigoengine" %%% "indigo" % indigoVersion,
         "io.indigoengine" %%% "indigo-extras" % indigoVersion,
