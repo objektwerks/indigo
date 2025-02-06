@@ -22,5 +22,5 @@ lazy val indigo = (project in file("."))
     }
   )
 scalacOptions ++= Seq(
-  "-Wall"
+  "-Wunused:all"
 )
