@@ -3,7 +3,7 @@ lazy val indigo = (project in file("."))
   .settings(
     name := "indigo",
     version := "0.1-SNAPSHOT",
-    scalaVersion := "3.6.4",
+    scalaVersion := "3.7.0-RC1",
     organization := "objektwerks"
   )
   .settings(
